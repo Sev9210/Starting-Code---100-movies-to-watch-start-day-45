@@ -10,11 +10,9 @@ soup = BeautifulSoup(movies, 'html.parser')
 
 
 movies = soup.select('div.article-title-description__text h3')
-top_one_hundred_movies = sorted(title.getText()for title in movies)
+movie_titles = sorted(title.getText()for title in movies)
 
+top_one_hundred_movies = movie_titles[::-1]
 with open('Movies', 'w', encoding='utf-8') as fav_movies:
     for title in top_one_hundred_movies:
         fav_movies.write(f'{title}\n')
-
-
-print(top_one_hundred_movies)
