@@ -1,29 +1,28 @@
-## 100 Movies that You Must Watch
+# Day 45 Final Project: 100 Best Movies of All Time Scraper
 
-# Objective
+A Python web scraping script that extracts Empire Magazine's list of the top 100 greatest movies of all time from a historical Wayback Machine archive. It parses the HTML data and saves the compiled movie list into a structured text file.
 
-Scrape the top 100 movies of all time from a website. Generate a text file called `movies.txt` that lists the movie titles in ascending order (starting from 1). 
-The result should look something like this:
+## 🚀 How It Works
+1. **Fetches Data**: Sends an HTTP request to the archived Empire Online page using the `requests` library.
+2. **Parses HTML**: Utilizes `BeautifulSoup` to target and isolate the specific `h3` tags containing the movie titles.
+3. **Sorts and Saves**: Extracts the clean text from the tags, sorts the list, and writes the final compilation into a local file named `Movies`.
 
+## 📦 Prerequisites
+Before running the script, make sure you have Python installed along with the required external libraries. You can install the dependencies via pip:
+
+```bash
+pip install requests beautifulsoup4
 ```
-1) The Godfather
-2) The Empire Strikes Back
-3) The Dark Knight
-4) The Shawshank Redemption
-... and so on
-```
-The central idea behind this project is to be able to use BeautifulSoup to obtain some data - like movie titles - from a website like Empire's (or from, say Timeout or Stacker that have curated similar lists). 
 
-### ⚠️ Important: Use the Internet Archive's URL
+## 🛠️ Usage
+1. Clone or download this repository.
+2. Run the script from your terminal:
+   ```bash
+   python main.py
+   ```
+3. Open the newly generated `Movies` text file in your directory to view the results.
 
-Since websites change very frequently, **use this link** 
-```
-URL = "https://web.archive.org/web/20200518073855/https://www.empireonline.com/movies/features/best-movies-2/"
-```
-from the Internet Archive's Wayback machine. That way your work will match the solution video.
-
-(Do *not* use https://www.empireonline.com/movies/features/best-movies-2/ which I've used in the screen recording)
-
-# Solution
-
-You can find the code from my walkthrough and solution as a downloadable .zip file in the course resources for this lesson. 
+## ⚙️ Technologies Used
+* **Python 3**
+* **Requests**: For handling HTTP network requests.
+* **BeautifulSoup4 (bs4)**: For parsing and navigating HTML data.
